@@ -1,0 +1,48 @@
+<div class="slider">
+  <header class="slider__header">
+    <h1>{{@title}}</h1>
+  </header>
+
+  <div class="slider__wrapper">
+    <ul
+      class="slider__slides"
+      style="transform: translateX({{slidesOffset}}px)"
+    >
+      {{#each @slides key="@index" as |slide|}}
+        <li class="slider__slide" style="width: {{slideWidth}}px; height: {{slideHeight}}px">
+          <p>{{slide.alt}}</p>
+        </li>
+      {{else}}
+        {{#if @slidesLength}}
+          {{yield slideWidth slideHeight}}
+        {{else}}
+          <li class="slider__slide" style="width: {{slideWidth}}px; height: {{slideHeight}}px">
+            <p>No Slides Available!</p>
+          </li>
+        {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+
+  <footer class="slider__footer">
+  {{#if (gt @slidesLength 1)}}
+    <button class="slider__button" onclick={{action prevSlide}}>prev</button>
+  {{/if}}
+
+  {{#if @slidesLength}}
+    <div class="slider__counters">
+    {{#each @slides key="@index" as |slide index|}}
+      <button
+        class="slider__counter"
+        onclick={{action pickSlide index}}
+        disabled={{eq index currentIndex}}
+      ></button>
+    {{/each}}
+    </div>
+  {{/if}}
+
+  {{#if (gt @slidesLength 1)}}
+    <button class="slider__button" onclick={{action nextSlide}}>next</button>
+  {{/if}}
+  </footer>
+</div>
