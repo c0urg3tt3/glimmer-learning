@@ -1,0 +1,27 @@
+<div>
+  <nav>
+    <g-link @to="{{@path}}/" @historyPush={{@historyPush}}>
+      foo
+    </g-link>
+    <g-link @to="{{@path}}/bar" @historyPush={{@historyPush}}>
+      bar
+    </g-link>
+    <g-link @to="{{@path}}/baz" @historyPush={{@historyPush}}>
+      baz
+    </g-link>
+  </nav>
+{{@path}}
+  <g-switch @pathname={{@pathname}} as |switchAction|>
+    <g-route @exact={{true}} @pathname={{@pathname}} @path="{{@path}}/" @switchIndex="1" @matchAction={{switchAction}}>
+      <p>foo</p>
+    </g-route>
+
+    <g-route @pathname={{@pathname}} @path="{{@path}}/bar" @switchIndex="2" @matchAction={{switchAction}}>
+      <p>bar</p>
+    </g-route>
+
+    <g-route @pathname={{@pathname}} @path="{{@path}}/:baz" @switchIndex="3" @matchAction={{switchAction}}>
+      <p>baz</p>
+    </g-route>
+  </g-switch>
+</div>

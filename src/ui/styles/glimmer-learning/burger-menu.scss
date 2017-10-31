@@ -1,0 +1,23 @@
+
+.burger-menu {
+  align-items: stretch;
+  color: lightcoral;
+  display: flex;
+  flex-flow: column nowrap;
+  font-weight: 600;
+  justify-content: flex-start;
+  position: relative;
+
+  & > .g-link {
+    border-right: solid 3px transparent;
+    color: inherit;
+    flex: 0 0 auto;
+    padding: .5rem 1rem;
+    transition: all .3s;
+
+    &:hover {
+      color: coral;
+      border-color: coral;
+    }
+  }
+}

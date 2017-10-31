@@ -1,0 +1,70 @@
+<div class="day-one-demo">
+  <g-slider
+    @title="fluid slider without slides"
+  />
+  <hr/>
+  <g-slider
+    @title="fluid slider with one slide"
+    @slides={{slide}}
+    @slidesLength={{slide.length}}
+  />
+  <hr/>
+  <g-slider
+    @title="fluid slider with many slides"
+    @slides={{slides}}
+    @slidesLength={{slides.length}}
+  />
+  <hr/>
+  <g-slider
+      @title="fluid slider with custom slides component"
+      @slidesLength={{3}}
+      as |slideWidth slideHeight|
+    >
+    <li class="slider__slide" style="width: {{slideWidth}}px; height: {{slideHeight}}px">
+      <p>custom component 1</p>
+    </li>
+    <li class="slider__slide" style="width: {{slideWidth}}px; height: {{slideHeight}}px">
+      <p>custom component 2</p>
+    </li>
+    <li class="slider__slide" style="width: {{slideWidth}}px; height: {{slideHeight}}px">
+      <p>custom component 3</p>
+    </li>
+  </g-slider>
+  <hr/>
+  <div style="width: 20rem; margin: 0 auto;">
+    <g-slider
+      @title="fluid slider ratio:1/1"
+      @slides={{slides}}
+      @slidesLength={{slides.length}}
+      @ratio={{ratio_1_1}}
+    />
+    <hr/>
+    <g-slider
+      @title="fluid slider ratio:4/3"
+      @slides={{slides}}
+      @slidesLength={{slides.length}}
+      @ratio={{ratio_4_3}}
+    />
+    <hr/>
+    <g-slider
+      @title="fluid slider ratio:3/2"
+      @slides={{slides}}
+      @slidesLength={{slides.length}}
+      @ratio={{ratio_3_2}}
+    />
+    <hr/>
+    <g-slider
+    @title="fluid slider ratio:16/10"
+    @slides={{slides}}
+    @slidesLength={{slides.length}}
+    @ratio={{ratio_16_10}}
+    />
+    <hr/>
+    <g-slider
+      @title="fluid slider ratio:16/9"
+      @slides={{slides}}
+      @slidesLength={{slides.length}}
+      @ratio={{ratio_16_9}}
+    />
+  </div>
+</div>

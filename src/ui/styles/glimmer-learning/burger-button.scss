@@ -1,0 +1,17 @@
+
+.burger-button {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-size: 1.5rem;
+  height: 2rem;
+  margin: 0;
+  padding: 0;
+  transition: all .3s;
+  width: 2rem;
+
+  &:hover {
+    color: coral;
+  }
+}

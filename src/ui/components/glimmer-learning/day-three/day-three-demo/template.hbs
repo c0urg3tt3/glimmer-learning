@@ -1,0 +1,10 @@
+<div class="day-three-demo">
+  <counter-container @store={{@store}}
+    as |counter increment decrement clearCounter|
+  >
+    <button onclick={{action clearCounter}}> clear </button>
+    <button onclick={{action decrement}}> - </button>
+    <output value={{counter}} />
+    <button onclick={{action increment}}> + </button>
+  </counter-container>
+</div>

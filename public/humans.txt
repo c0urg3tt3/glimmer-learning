@@ -1,0 +1,19 @@
+/* TEAM */
+
+dev: Pierre-Arnaud Lumalé
+site: www.kadactivity.net
+twitter: @kadactivity
+Location: Paris, France
+
+/* THANKS */
+The Open Source Communities
+
+/* SITE */
+Last Update: 2017/10/25
+Standards: HTML5, CSS3, ES6
+Libraries:
+  Glimmerjs - https://www.glimmerjs.com
+  Redux - https://www.redux.com
+Software:
+  Ember CLI - https://www.ember-cli.com
+  Atom - https://www.atom.io
