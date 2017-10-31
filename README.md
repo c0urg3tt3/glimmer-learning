@@ -1,7 +1,10 @@
 # glimmer-learning
 
-This README outlines the details of collaborating on this Glimmer application.
-A short introduction of this app could easily go here.
+Experimental week using Glimmerjs to build a declarative SPA.
+
+## Demo
+
+test the [demo](https://c0urg3tt3.github.io/glimmer-learning)
 
 ## Prerequisites
 
