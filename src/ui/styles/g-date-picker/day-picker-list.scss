@@ -1,0 +1,23 @@
+
+.day-picker__list {
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 2rem repeat(6, 1fr);
+  // background: rgba(255, 255, 255, .1);
+  line-height: 2.7rem;
+}
+
+.day-picker__list-header {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+  color: black;
+  line-height: 2rem;
+  background: rgba(250, 130, 30, 1);
+  font-weight: 600;
+  border-bottom: solid 1px black;
+
+  & > abbr {
+    text-decoration: none;
+  }
+}

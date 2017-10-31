@@ -1,0 +1,22 @@
+<div class="day-picker">
+  <picker-header
+    @togglePickerProperties={{@togglePickerProperties}}
+    @title={{@title}}
+    @prevAction={{@prevAction}}
+    @nextAction={{@nextAction}}
+    @prevIsDisabled={{and (eq @minMonth @month) (eq @minYear @year)}}
+    @nextIsDisabled={{and (eq @maxMonth @month) (eq @maxYear @year)}}
+  />
+
+  <day-picker-list
+    @model={{days}}
+    as |item|
+  >
+    <picker-list-item
+      @selectAction={{action @selectAction item.day}}
+      @isDisabled={{item.disabled}}
+      @selected={{eq item.day @day}}
+      @title={{item.day}}
+    />
+  </day-picker-list>
+</div>

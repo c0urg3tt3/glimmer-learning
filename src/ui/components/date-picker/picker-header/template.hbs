@@ -1,0 +1,44 @@
+<header class="date-picker_header">
+{{#if @togglePickerProperties}}
+  <button
+    class="date-picker_header__button"
+    onclick={{@togglePickerProperties}}
+    role="button"
+    aria-live="assertive"
+    aria-atomic="true"
+  >
+    {{@title}}
+  </button>
+{{else}}
+  <span
+    class="date-picker_header__span"
+    role="heading"
+    aria-live="assertive"
+    aria-atomic="true"
+  >
+    {{@title}}
+  </span>
+{{/if}}
+
+  <button
+    class="date-picker_header__button"
+    disabled={{@prevIsDisabled}}
+    onclick={{@prevAction}}
+    role="button"
+    aria-labelled="previous"
+    tabindex="0"
+  >
+    &#8678;
+  </button>
+
+  <button
+    class="date-picker_header__button"
+    disabled={{@nextIsDisabled}}
+    onclick={{@nextAction}}
+    role="button"
+    aria-labelled="next" 
+    tabindex="0"
+  >
+    &#8680;
+  </button>
+</header>

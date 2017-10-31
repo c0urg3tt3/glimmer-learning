@@ -1,0 +1,26 @@
+<ul class="date-picker__list day-picker__list">
+  <li class="day-picker__list-header">
+    <abbr title="lundi">lu</abbr>
+  </li>
+  <li class="day-picker__list-header">
+    <abbr title="mardi">ma</abbr>
+  </li>
+  <li class="day-picker__list-header">
+    <abbr title="mercredi">me</abbr>
+  </li>
+  <li class="day-picker__list-header">
+    <abbr title="jeudi">je</abbr>
+  </li>
+  <li class="day-picker__list-header">
+    <abbr title="vendredi">ve</abbr>
+  </li>
+  <li class="day-picker__list-header">
+    <abbr title="samedi">sa</abbr>
+  </li>
+  <li class="day-picker__list-header">
+    <abbr title="dimanche">di</abbr>
+  </li>
+{{#each @model key="@index" as |item|}}
+  {{yield item}}
+{{/each}}
+</ul>

@@ -1,0 +1,13 @@
+{{#if @isDisabled}}
+  <li class="date-picker__list-item disabled">
+    {{@title}}
+  </li>
+{{else}}
+  <li
+    class="date-picker__list-item"
+    onclick={{@selectAction}}
+    selected={{@selected}}
+  >
+    {{@title}}
+  </li>
+{{/if}}
