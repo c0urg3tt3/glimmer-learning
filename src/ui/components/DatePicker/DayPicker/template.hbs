@@ -1,5 +1,5 @@
 <div class="day-picker">
-  <picker-header
+  <PickerHeader
     @togglePickerProperties={{@togglePickerProperties}}
     @title={{@title}}
     @prevAction={{@prevAction}}
@@ -8,15 +8,15 @@
     @nextIsDisabled={{and (eq @maxMonth @month) (eq @maxYear @year)}}
   />
 
-  <day-picker-list
+  <DayPickerList
     @model={{days}}
     as |item|
   >
-    <picker-list-item
+    <PickerListItem
       @selectAction={{action @selectAction item.day}}
       @isDisabled={{item.disabled}}
       @selected={{eq item.day @day}}
       @title={{item.day}}
     />
-  </day-picker-list>
+  </DayPickerList>
 </div>

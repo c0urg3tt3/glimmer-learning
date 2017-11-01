@@ -18,7 +18,7 @@
   </label>
 
 {{#if state.showDayPicker}}
-  <!-- day-picker
+  <!-- DayPicker
     @togglePickerProperties={{action togglePickerProperties  'showMonthPicker' 'showDayPicker'}}
     @title="{{monthToString}} {{state.year}}"
     @prevAction={{action prevMonth}}
@@ -37,7 +37,7 @@
   / -->
 
   <div class="day-picker" aria-hidden={{state.showDayPicker}}>
-    <picker-header
+    <PickerHeader
       @togglePickerProperties={{action togglePickerProperties  'showMonthPicker' 'showDayPicker'}}
       @title="{{monthToString}} {{state.year}}"
       @prevAction={{action prevMonth}}
@@ -46,24 +46,24 @@
       @nextIsDisabled={{and (eq state.maxMonth state.month) (eq state.maxYear state.year)}}
     />
 
-    <day-picker-list
+    <DayPickerList
       @model={{days}}
       @customClass="day-picker__list"
       as |item|
     >
-      <picker-list-item
+      <PickerListItem
         @selectAction={{action selectDay item.day}}
         @isDisabled={{item.disabled}}
         @selected={{eq item.day state.day}}
         @title={{item.day}}
       />
-    </day-picker-list>
+    </DayPickerList>
   </div>
 {{/if}}
 
 {{#if state.showMonthPicker}}
   <div class="month-picker">
-    <picker-header
+    <PickerHeader
       @togglePickerProperties={{action togglePickerProperties  'showYearPicker' 'showMonthPicker'}}
       @title={{state.year}}
       @prevAction={{action prevYear}}
@@ -72,24 +72,24 @@
       @nextIsDisabled={{eq state.maxYear state.year}}
     />
 
-    <picker-list
+    <PickerList
       @model={{months}}
       @customClass="month-picker__list"
       as |item|
     >
-      <picker-list-item
+      <PickerListItem
         @selectAction={{action selectMonth item.monthIndex}}
         @isDisabled={{item.disabled}}
         @selected={{eq item.monthIndex state.month}}
         @title={{item.month}}
       />
-    </picker-list>
+    </PickerList>
   </div>
 {{/if}}
 
 {{#if state.showYearPicker}}
   <div class="year-picker">
-    <picker-header
+    <PickerHeader
       @title="{{firstYear.year}} - {{lastYear.year}}"
       @prevAction={{action prevYears}}
       @nextAction={{action nextYears}}
@@ -97,18 +97,18 @@
       @nextIsDisabled={{eq yearsIndexMax yearsIndex}}
     />
 
-    <picker-list
+    <PickerList
       @model={{years}}
       @customClass="year-picker__list"
       as |item|
     >
-      <picker-list-item
+      <PickerListItem
         @selectAction={{action selectYear item.year}}
         @isDisabled={{item.disabled}}
         @selected={{eq item.year state.year}}
         @title={{item.year}}
       />
-    </picker-list>
+    </PickerList>
   </div>
 {{/if}}
 </div>

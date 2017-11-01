@@ -3,11 +3,11 @@ import hbs from '@glimmer/inline-precompile';
 
 const { module, test } = QUnit;
 
-module('Component: picker-list', function(hooks) {
+module('Component: PickerListItem', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    await this.render(hbs`<picker-list />`);
+    await this.render(hbs`<PickerListItem />`);
     assert.ok(this.containerElement.querySelector('div'));
   });
 });
