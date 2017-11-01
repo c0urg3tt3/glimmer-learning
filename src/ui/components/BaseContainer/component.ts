@@ -27,6 +27,8 @@ export default class BaseContainer extends Component {
     // retrieve the store from args
     const store = this.args.store
     assert(store, `a 'store' argument must be provided for '${this.debugName}' component | <${this.debugName} @store={{store}} as |...|>`)
+    // initialize locale state
+    this.state = this.mapStateToLocaleState(store.getState())
     // set the unsubscribe method to remove store listener when cmponent is destroyed
     this.__unsubscribe = store.subscribe(() => {
       // retrieve the updated state and set it to the locale state
