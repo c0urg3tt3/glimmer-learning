@@ -3,24 +3,22 @@
     <h1>{{@title}}</h1>
   </header>
 
-  <div class="slider__wrapper">
+  <div class="slider__wrapper" style="width: {{slideWidth}}px; height: {{slideHeight}}px;">
     <ul
       class="slider__slides"
       style="transform: translateX({{slidesOffset}}px)"
     >
-      {{#each @slides key="@index" as |slide|}}
-        <li class="slider__slide" style="width: {{slideWidth}}px; height: {{slideHeight}}px">
-          <p>{{slide.alt}}</p>
-        </li>
+    {{#each @slides key="@index" as |slide|}}
+      {{yield slideWidth slideHeight slide}}
+    {{else}}
+      {{#if @slidesLength}}
+        {{yield slideWidth slideHeight}}
       {{else}}
-        {{#if @slidesLength}}
-          {{yield slideWidth slideHeight}}
-        {{else}}
-          <li class="slider__slide" style="width: {{slideWidth}}px; height: {{slideHeight}}px">
-            <p>No Slides Available!</p>
-          </li>
-        {{/if}}
-      {{/each}}
+        <Slide @slideWidth={{slideWidth}} @slideHeight={{slideHeight}}>
+          <p>No Slides Available!</p>
+        </Slide>
+      {{/if}}
+    {{/each}}
     </ul>
   </div>
 
@@ -31,7 +29,7 @@
 
   {{#if @slidesLength}}
     <div class="slider__counters">
-    {{#each @slides key="@index" as |slide index|}}
+    {{#each navButtons key="@index" as |navButton index|}}
       <button
         class="slider__counter"
         onclick={{action pickSlide index}}

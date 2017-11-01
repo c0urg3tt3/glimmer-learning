@@ -12,6 +12,12 @@ export default class Slider extends Component {
     return (this.slideWidth / ratio).toFixed(2)
   }
 
+  @tracked('slidesLength')
+  get navButtons() {
+    const { slidesLength = 0 } = this.args
+    return [...Array(slidesLength)]
+  }
+
   @tracked('slideWidth', 'currentIndex')
   get slidesOffset() {
     return -(this.slideWidth * this.currentIndex)
@@ -36,7 +42,6 @@ export default class Slider extends Component {
   willDestroy() {
     window.removeEventListener('optimizedResize', this.resize)
   }
-
 
   prevSlide() {
     const prevIndex = this.currentIndex - 1
