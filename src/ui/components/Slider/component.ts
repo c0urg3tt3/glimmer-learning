@@ -1,25 +1,6 @@
 import Component, { tracked } from '@glimmer/component'
 
-(function() {
-  // https://developer.mozilla.org/en-US/docs/Web/Events/resize
-  // requestAnimationFrame + customEvent
-  function throttle(type, name, obj = window) {
-      var running = false
-      var func = function() {
-          if (running) { return }
-          running = true
-            requestAnimationFrame(function() {
-              obj.dispatchEvent(new CustomEvent(name))
-              running = false
-          })
-      }
-      obj.addEventListener(type, func)
-  }
-
-  throttle("resize", "optimizedResize")
-})()
-
-export default class GSlider extends Component {
+export default class Slider extends Component {
   @tracked slideWidth = 0
   @tracked currentIndex = 0
 
@@ -48,13 +29,14 @@ export default class GSlider extends Component {
     }, 0)
   }
 
+  resize(event) {
+    this.slideWidth = this.bounds.firstNode['clientWidth']
+  }
+
   willDestroy() {
     window.removeEventListener('optimizedResize', this.resize)
   }
 
-  resize(event) {
-    this.slideWidth = this.element['clientWidth']
-  }
 
   prevSlide() {
     const prevIndex = this.currentIndex - 1

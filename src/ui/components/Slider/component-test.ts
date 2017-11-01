@@ -3,11 +3,11 @@ import hbs from '@glimmer/inline-precompile';
 
 const { module, test } = QUnit;
 
-module('Component: g-slider', function(hooks) {
+module('Component: Slider', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    await this.render(hbs`<g-slider />`);
+    await this.render(hbs`<Slider />`);
     assert.ok(this.containerElement.querySelector('div'));
   });
 });
