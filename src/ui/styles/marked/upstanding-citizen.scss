@@ -45,6 +45,8 @@ Download @font-face kits from <http://www.fontsquirrel.com/fontface>. Woff versi
 // html > body {
 //   font-size: 14px; }
 .md-page {
+  & del {
+    text-decoration: line-through; }
 
   & li {
     font-size: 110%; }

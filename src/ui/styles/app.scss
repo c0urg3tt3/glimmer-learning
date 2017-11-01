@@ -1,8 +1,7 @@
 @import './reset';
 @import './marked/upstanding-citizen';
-@import './g-date-picker/_imports';
-@import './g-slider/_imports';
-@import './g-redux/_imports';
+@import './date-picker/_imports';
+@import './slider/_imports';
 @import './glimmer-learning/_imports';
 
 .app-header {
@@ -13,7 +12,7 @@
   justify-content: space-between;
   margin: 0 0 1rem;
   padding: 1rem 1rem 2rem;
-  background: linear-gradient(black 75%, lightcoral);
+  background: linear-gradient(black 90%, lightcoral);
   color: lightcoral;
   line-height: 2rem;
   border-bottom: solid 1px coral;
@@ -54,17 +53,12 @@
     border-right: solid 1px coral;
   }
 
-  & > .g-route {
-    display: none;
-    transition: all .3s;
-
-    &[matched] {
-      display: block;
-      flex: 1 1 auto;
-      min-width: 18rem;
-      width: 100vw;
-      margin: 0 1rem;
-    }
+  & > .route {
+    display: block;
+    flex: 1 1 auto;
+    min-width: 18rem;
+    width: 100vw;
+    margin: 0 1rem;
 
     & > div > footer {
       margin: 0;
@@ -108,7 +102,7 @@
       opacity: 1;
     }
 
-    & > .g-route[matched] {
+    & > .route {
       width: calc(100vw - 25rem);
 
       @media screen and (max-width: 40rem) {
@@ -128,10 +122,16 @@
 
       & > .year-picker,
       & > .month-picker,
-      & > .day-picker {  
+      & > .day-picker {
         top: -22rem;
         left: calc(50% - 10rem);
       }
     }
   }
+}
+
+.app-footer {
+  text-align: center;
+  margin: 0;
+  padding: 1rem;
 }
