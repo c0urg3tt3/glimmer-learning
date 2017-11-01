@@ -14,6 +14,6 @@ app.registerInitializer({
   }
 });
 
-app.renderComponent('glimmer-learning', containerElement, null);
+app.renderComponent('GlimmerLearning', containerElement, null);
 
 app.boot();

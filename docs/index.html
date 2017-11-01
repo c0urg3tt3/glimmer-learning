@@ -10,7 +10,7 @@
     
 
     <link type="text/plain" rel="author" href="/humans.txt" />
-    <link rel="stylesheet" href="app-9e042d0cee271e2cf4e8503afa6229a7.css">
+    <link rel="stylesheet" href="app-22b7fd6cdba51ec1c7961ecd7e09b49e.css">
 
     
   </head>
@@ -18,7 +18,27 @@
     
 
     <div id="app"></div>
-    <script src="app-de7b0b024a7148fa0d4dffca2a761253.js"></script>
+    <script>
+    (function() {
+      // https://developer.mozilla.org/en-US/docs/Web/Events/resize
+      // requestAnimationFrame + customEvent
+      function throttle(type, name, obj = window) {
+          var running = false
+          var func = function() {
+              if (running) { return }
+              running = true
+                requestAnimationFrame(function() {
+                  obj.dispatchEvent(new CustomEvent(name))
+                  running = false
+              })
+          }
+          obj.addEventListener(type, func)
+      }
+
+      throttle("resize", "optimizedResize")
+    })()
+    </script>
+    <script src="app-29d84e47e5c759bcd37add7bc2c24696.js"></script>
 
     
   </body>
