@@ -93,6 +93,8 @@ Download @font-face kits from <http://www.fontsquirrel.com/fontface>. Woff versi
                                     }
 
                                     */ }
+  .md-page del {
+    text-decoration: line-through; }
   .md-page li {
     font-size: 110%; }
   .md-page li li {
@@ -683,30 +685,6 @@ Download @font-face kits from <http://www.fontsquirrel.com/fontface>. Woff versi
   height: 2rem;
   padding: .125rem; }
 
-.counter-container {
-  align-items: stretch;
-  display: flex;
-  flex-flow: row nowrap;
-  height: 2rem;
-  justify-content: stretch;
-  line-height: 2rem;
-  margin: 0 0 1rem 0;
-  padding: 0;
-  position: relative;
-  width: 20rem;
-  text-align: center; }
-  .counter-container > output {
-    border: solid 1px black;
-    flex: 2 0 auto;
-    font-size: 1.25rem; }
-  .counter-container > button {
-    border: solid 1px black;
-    flex: 1 0 auto; }
-    .counter-container > button:first-child {
-      border-radius: .25rem 0 0 .25rem; }
-    .counter-container > button:last-child {
-      border-radius: 0 .25rem .25rem 0; }
-
 .burger-button {
   border: 0;
   background: transparent;
@@ -739,6 +717,30 @@ Download @font-face kits from <http://www.fontsquirrel.com/fontface>. Woff versi
       color: coral;
       border-color: coral; }
 
+.counter-container {
+  align-items: stretch;
+  display: flex;
+  flex-flow: row nowrap;
+  height: 2rem;
+  justify-content: stretch;
+  line-height: 2rem;
+  margin: 0 0 1rem 0;
+  padding: 0;
+  position: relative;
+  width: 20rem;
+  text-align: center; }
+  .counter-container > output {
+    border: solid 1px black;
+    flex: 2 0 auto;
+    font-size: 1.25rem; }
+  .counter-container > button {
+    border: solid 1px black;
+    flex: 1 0 auto; }
+    .counter-container > button:first-child {
+      border-radius: .25rem 0 0 .25rem; }
+    .counter-container > button:last-child {
+      border-radius: 0 .25rem .25rem 0; }
+
 .app-header {
   position: relative;
   display: flex;
@@ -747,7 +749,7 @@ Download @font-face kits from <http://www.fontsquirrel.com/fontface>. Woff versi
   justify-content: space-between;
   margin: 0 0 1rem;
   padding: 1rem 1rem 2rem;
-  background: linear-gradient(black 75%, lightcoral);
+  background: linear-gradient(black 90%, lightcoral);
   color: lightcoral;
   line-height: 2rem;
   border-bottom: solid 1px coral; }
@@ -778,19 +780,16 @@ Download @font-face kits from <http://www.fontsquirrel.com/fontface>. Woff versi
     opacity: 0;
     transition: all .3s;
     border-right: solid 1px coral; }
-  .app-main > .g-route {
-    display: none;
-    transition: all .3s; }
-    .app-main > .g-route[matched] {
-      display: block;
-      flex: 1 1 auto;
-      min-width: 18rem;
-      width: 100vw;
-      margin: 0 1rem; }
-    .app-main > .g-route > div > footer {
+  .app-main > .route {
+    display: block;
+    flex: 1 1 auto;
+    min-width: 18rem;
+    width: 100vw;
+    margin: 0 1rem; }
+    .app-main > .route > div > footer {
       margin: 0;
       padding: 3rem 0; }
-      .app-main > .g-route > div > footer > nav {
+      .app-main > .route > div > footer > nav {
         position: relative;
         display: flex;
         flex-flow: row wrap;
@@ -799,12 +798,12 @@ Download @font-face kits from <http://www.fontsquirrel.com/fontface>. Woff versi
         font-size: 1.25rem;
         font-weight: 600;
         text-align: center; }
-        .app-main > .g-route > div > footer > nav > .g-link {
+        .app-main > .route > div > footer > nav > .g-link {
           flex: 0 0 18rem;
           margin: 1rem 0;
           padding: .5rem;
           color: lightcoral; }
-          .app-main > .g-route > div > footer > nav > .g-link:hover {
+          .app-main > .route > div > footer > nav > .g-link:hover {
             color: coral; }
   .app-main.show-menu {
     position: relative;
@@ -817,10 +816,10 @@ Download @font-face kits from <http://www.fontsquirrel.com/fontface>. Woff versi
       flex: 0 0 20rem;
       width: 20rem;
       opacity: 1; }
-    .app-main.show-menu > .g-route[matched] {
+    .app-main.show-menu > .route {
       width: calc(100vw - 25rem); }
       @media screen and (max-width: 40rem) {
-        .app-main.show-menu > .g-route[matched] {
+        .app-main.show-menu > .route {
           flex: 0 0 0;
           min-width: 0;
           width: 0;
@@ -832,3 +831,8 @@ Download @font-face kits from <http://www.fontsquirrel.com/fontface>. Woff versi
   .app-main .day-two-demo > .date-picker > .day-picker {
     top: -22rem;
     left: calc(50% - 10rem); }
+
+.app-footer {
+  text-align: center;
+  margin: 0;
+  padding: 1rem; }
