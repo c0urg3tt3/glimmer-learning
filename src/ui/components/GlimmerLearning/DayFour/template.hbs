@@ -1,0 +1,18 @@
+<div class="day-four">
+  <main class="md-page">
+    {{{html}}}
+  </main>
+
+  <DayFourDemo @historyPush={{@historyPush}} @path={{@path}} @pathname={{@pathname}} />
+
+  <footer>
+    <nav>
+      <LinkTo @to="/day-three" @historyPush={{@historyPush}}>
+        Day Three - With Redux
+      </LinkTo>
+      <LinkTo @to="/day-five" @historyPush={{@historyPush}}>
+        Day Five - RouteSwitch
+      </LinkTo>
+    </nav>
+  </footer>
+</div>

@@ -1,0 +1,34 @@
+<div>
+  <nav>
+    <LinkTo @to="{{@path}}/" @historyPush={{@historyPush}}>
+      foo
+    </LinkTo>
+    <LinkTo @to="{{@path}}/bar" @historyPush={{@historyPush}}>
+      bar
+    </LinkTo>
+    <LinkTo @to="{{@path}}/barbar" @historyPush={{@historyPush}}>
+      barbar
+    </LinkTo>
+    <LinkTo @to="{{@path}}/baz" @historyPush={{@historyPush}}>
+      baz
+    </LinkTo>
+  </nav>
+
+  <RouteSwitch @pathname={{@pathname}} as |switchAction|>
+    <Route @exact={{true}} @pathname={{@pathname}} @path="{{@path}}/" @switchIndex="1" @matchAction={{switchAction}}>
+      <p>foo</p>
+    </Route>
+
+    <Route @pathname={{@pathname}} @path="{{@path}}/bar" @switchIndex="2" @matchAction={{switchAction}}>
+      <p>bar</p>
+    </Route>
+
+    <Route @pathname={{@pathname}} @path="{{@path}}/barbar" @switchIndex="2" @matchAction={{switchAction}}>
+      <p>barbar</p>
+    </Route>
+
+    <Route @pathname={{@pathname}} @path="{{@path}}/:baz" @switchIndex="3" @matchAction={{switchAction}}>
+      <p>baz</p>
+    </Route>
+  </RouteSwitch>
+</div>

@@ -1,0 +1,25 @@
+<div class="day-four-demo">
+  <nav>
+    <LinkTo @to="{{@path}}/" @historyPush={{@historyPush}}>
+      foo
+    </LinkTo>
+    <LinkTo @to="{{@path}}/bar" @historyPush={{@historyPush}}>
+      bar
+    </LinkTo>
+    <LinkTo @to="{{@path}}/baz" @historyPush={{@historyPush}}>
+      baz
+    </LinkTo>
+  </nav>
+
+  <Route @exact={{true}} @pathname={{@pathname}} @path="{{@path}}/">
+    <p>foo</p>
+  </Route>
+
+  <Route @pathname={{@pathname}} @path="{{@path}}/bar">
+    <p>bar</p>
+  </Route>
+
+  <Route @pathname={{@pathname}} @path="{{@path}}/baz">
+    <p>baz</p>
+  </Route>
+</div>
