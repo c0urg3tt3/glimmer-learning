@@ -19,4 +19,4 @@ thank to Dan Abramov for redux.
 
 thank Tom Dales and Yehuda Katz for the fork of SproutCore, Emberjs never cease to amaze me!
 
-thank to all the people that share there knowledge!
+thank to all the people that share knowledge!

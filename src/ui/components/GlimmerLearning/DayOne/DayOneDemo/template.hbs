@@ -1,70 +1,103 @@
 <div class="day-one-demo">
-  <Slider
-    @title="fluid slider without slides"
-  />
+  <Slider @title="fluid slider without slides" as |slideWidth slideHeight slide|>
+    <Slide @slideWidth={{slideWidth}} @slideHeight={{slideHeight}}>
+      <p>{{slide.alt}}</p>
+    </Slide>
+  </Slider>
+
   <hr/>
   <Slider
     @title="fluid slider with one slide"
     @slides={{slide}}
     @slidesLength={{slide.length}}
-  />
+    as |slideWidth slideHeight slide|>
+     <Slide @slideWidth={{slideWidth}} @slideHeight={{slideHeight}}>
+       <p>{{slide.alt}}</p>
+     </Slide>
+   </Slider>
+
   <hr/>
   <Slider
     @title="fluid slider with many slides"
     @slides={{slides}}
     @slidesLength={{slides.length}}
-  />
+    as |slideWidth slideHeight slide|>
+    <Slide @slideWidth={{slideWidth}} @slideHeight={{slideHeight}}>
+      <p>{{slide.alt}}</p>
+    </Slide>
+  </Slider>
+
   <hr/>
   <Slider
       @title="fluid slider with custom slides component"
       @slidesLength={{3}}
       as |slideWidth slideHeight|
     >
-    <li class="slider__slide" style="width: {{slideWidth}}px; height: {{slideHeight}}px">
+    <Slide @slideWidth={{slideWidth}} @slideHeight={{slideHeight}}>
       <p>custom component 1</p>
-    </li>
-    <li class="slider__slide" style="width: {{slideWidth}}px; height: {{slideHeight}}px">
+    </Slide>
+    <Slide @slideWidth={{slideWidth}} @slideHeight={{slideHeight}}>
       <p>custom component 2</p>
-    </li>
-    <li class="slider__slide" style="width: {{slideWidth}}px; height: {{slideHeight}}px">
+    </Slide>
+    <Slide @slideWidth={{slideWidth}} @slideHeight={{slideHeight}}>
       <p>custom component 3</p>
-    </li>
+    </Slide>
   </Slider>
+
   <hr/>
-  <div style="width: 20rem; margin: 0 auto;">
+  <div style="width: 18rem; margin: 0 auto;">
     <Slider
       @title="fluid slider ratio:1/1"
-      @slides={{slides}}
-      @slidesLength={{slides.length}}
+      @slidesLength={{1}}
       @ratio={{ratio_1_1}}
-    />
-    <hr/>
+      as |slideWidth slideHeight|>
+      <Slide @slideWidth={{slideWidth}} @slideHeight={{slideHeight}}>
+        <p>slide #1</p>
+      </Slide>
+    </Slider>
+
+      <hr/>
     <Slider
       @title="fluid slider ratio:4/3"
-      @slides={{slides}}
-      @slidesLength={{slides.length}}
+      @slidesLength={{1}}
       @ratio={{ratio_4_3}}
-    />
-    <hr/>
+      as |slideWidth slideHeight|>
+      <Slide @slideWidth={{slideWidth}} @slideHeight={{slideHeight}}>
+        <p>slide #1</p>
+      </Slide>
+    </Slider>
+
+      <hr/>
     <Slider
       @title="fluid slider ratio:3/2"
-      @slides={{slides}}
-      @slidesLength={{slides.length}}
+      @slidesLength={{1}}
       @ratio={{ratio_3_2}}
-    />
-    <hr/>
+      as |slideWidth slideHeight|>
+      <Slide @slideWidth={{slideWidth}} @slideHeight={{slideHeight}}>
+        <p>slide #1</p>
+      </Slide>
+    </Slider>
+
+      <hr/>
     <Slider
-    @title="fluid slider ratio:16/10"
-    @slides={{slides}}
-    @slidesLength={{slides.length}}
-    @ratio={{ratio_16_10}}
-    />
-    <hr/>
+      @title="fluid slider ratio:16/10"
+      @slidesLength={{1}}
+      @ratio={{ratio_16_10}}
+      as |slideWidth slideHeight|>
+      <Slide @slideWidth={{slideWidth}} @slideHeight={{slideHeight}}>
+        <p>slide #1</p>
+      </Slide>
+    </Slider>
+
+      <hr/>
     <Slider
       @title="fluid slider ratio:16/9"
-      @slides={{slides}}
-      @slidesLength={{slides.length}}
+      @slidesLength={{1}}
       @ratio={{ratio_16_9}}
-    />
+      as |slideWidth slideHeight|>
+      <Slide @slideWidth={{slideWidth}} @slideHeight={{slideHeight}}>
+        <p>slide #1</p>
+      </Slide>
+    </Slider>
   </div>
 </div>

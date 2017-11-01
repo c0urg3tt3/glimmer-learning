@@ -31,48 +31,117 @@ i was able to test helpers but not components, the tooling is not ready yet.
 
 ```html
 <StoreProvider as |store|>
-  <RouterBrowser @basename="/" as |path pathname historyPush|>
-    <DemoContainer @store={{store}} as |hasBurgerMenu toggleBurgerMenu showMenuClassname|>
+  <RouterBrowser
+    @basename="/"
+    as |path pathname historyPush|
+  >
+    <DemoContainer
+      @store={{store}}
+      as |
+        toggleBurgerMenu
+        showMenuClassname
+      |
+    >
       <header class="app-header">
-        <LinkTo @to="{{path}}" @historyPush={{historyPush}}>
+        <LinkTo
+          @to="{{path}}"
+          @historyPush={{historyPush}}
+        >
           <h1>Glimmer Learning</h1>
         </LinkTo>
-        <BurgerButton @clickAction={{action toggleBurgerMenu}} />
+        <BurgerButton
+          @clickAction={{action toggleBurgerMenu}}
+        />
       </header>
 
-      <div class="app-main {{showMenuClassname}}">
-        <BurgerMenu @path={{path}} @historyPush={{historyPush}} @toggleBurgerMenu={{toggleBurgerMenu}} />
+      <div
+        class="app-main {{showMenuClassname}}"
+      >
+        <BurgerMenu
+          @path={{path}}
+          @historyPush={{historyPush}}
+          @toggleBurgerMenu={{toggleBurgerMenu}}
+        />
 
-        <Route @exact={{true}} @pathname={{pathname}} @path="/">
-          <HomePage @historyPush={{historyPush}} />
+        <Route
+          @exact={{true}}
+          @pathname={{pathname}}
+          @path="/"
+        >
+          <HomePage
+            @historyPush={{historyPush}}
+          />
         </Route>
 
-        <Route @pathname={{pathname}} @path="/day-one">
-          <DayOne @historyPush={{historyPush}} />
+        <Route
+          @pathname={{pathname}}
+          @path="/day-one"
+        >
+          <DayOne
+            @historyPush={{historyPush}}
+          />
         </Route>
 
-        <Route @pathname={{pathname}} @path="/day-two">
-          <DayTwo @historyPush={{historyPush}} />
+        <Route
+          @pathname={{pathname}}
+          @path="/day-two"
+        >
+          <DayTwo
+            @historyPush={{historyPush}}
+          />
         </Route>
 
-        <Route @pathname={{pathname}} @path="/day-three">
-          <DayThree @historyPush={{historyPush}} @store={{store}} />
+        <Route
+          @pathname={{pathname}}
+          @path="/day-three"
+        >
+          <DayThree
+            @historyPush={{historyPush}}
+            @store={{store}}
+          />
         </Route>
 
-        <Route @pathname={{pathname}} @path="/day-four" as |path|>
-          <DayFour @historyPush={{historyPush}} @path={{path}} @pathname={{pathname}} />
+        <Route
+          @pathname={{pathname}}
+          @path="/day-four"
+          as |path|
+        >
+          <DayFour
+            @historyPush={{historyPush}}
+            @path={{path}}
+            @pathname={{pathname}}
+
+            />
         </Route>
 
-        <Route @pathname={{pathname}} @path="/day-five" as |path|>
-          <DayFive @historyPush={{historyPush}} @path={{path}} @pathname={{pathname}} />
+        <Route
+          @pathname={{pathname}}
+          @path="/day-five"
+          as |path|
+        >
+          <DayFive
+            @historyPush={{historyPush}}
+            @path={{path}}
+            @pathname={{pathname}}
+          />
         </Route>
 
-        <Route @pathname={{pathname}} @path="/day-six">
-          <DaySix @historyPush={{historyPush}} />
+        <Route
+          @pathname={{pathname}}
+          @path="/day-six"
+        >
+          <DaySix
+            @historyPush={{historyPush}}
+          />
         </Route>
 
-        <Route @pathname={{pathname}} @path="/day-seven">
-          <DaySeven @historyPush={{historyPush}} />
+        <Route
+          @pathname={{pathname}}
+          @path="/day-seven"
+        >
+          <DaySeven
+            @historyPush={{historyPush}}
+          />
         </Route>
       </div>
     </DemoContainer>

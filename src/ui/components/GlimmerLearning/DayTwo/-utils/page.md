@@ -47,7 +47,11 @@ and that worked just fine!
 ### examples
 
 ```html
-<g-date-picker @year={{2017}}  @month={{0}} @day={{1}}/>
+<g-date-picker
+  @year={{2017}}  
+  @month={{0}}
+  @day={{1}}
+/>
 ```
 
 ## live demo

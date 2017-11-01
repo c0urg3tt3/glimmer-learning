@@ -58,13 +58,25 @@ and clearly i don't want something to mess with my state machine actions so `Obj
 
 ```html
 <StoreProvider as |store|>
-  <CounterContainer @store={{@store}}
-    as |counter increment decrement clearCounter|
+  <CounterContainer
+    @store={{@store}}
+    as |
+      counter
+      increment
+      decrement
+      clearCounter
+    |
   >
-    <button onclick={{action clearCounter}}> clear </button>
-    <button onclick={{action decrement}}> - </button>
+    <button
+      onclick={{action clearCounter}}
+    > clear </button>
+    <button
+      onclick={{action decrement}}
+    > - </button>
     <output value={{counter}} />
-    <button onclick={{action increment}}> + </button>
+    <button
+      onclick={{action increment}}
+    > + </button>
   </CounterContainer>
 </StoreProvider>
 ```

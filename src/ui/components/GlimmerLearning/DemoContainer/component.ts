@@ -13,11 +13,6 @@ export default class DemoContainer extends BaseContainer {
   @tracked state = initialState
 
   @tracked('state')
-  get hasBurgerMenu() {
-    return this.state.hasBurgerMenu
-  }
-
-  @tracked('hasBurgerMenu')
   get showMenuClassname() {
     return this.state.hasBurgerMenu ? 'show-menu' : ''
   }

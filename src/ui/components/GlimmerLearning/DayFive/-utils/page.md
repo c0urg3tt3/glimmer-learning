@@ -41,29 +41,60 @@ i ended up with something messy, not sure i understand the architecture folder n
 ### examples
 
 ```html
-<RouterBrowser @store={{store}} as |pathname historyPush|>
+<RouterBrowser
+  @store={{store}}
+  as |pathname historyPush|
+>
   <nav>
-    <LinkTo @to="/foo" @historyPush={{@historyPush}}>
+    <LinkTo
+      @to="/foo"
+      @historyPush={{@historyPush}}
+    >
       foo
     </LinkTo>
-    <LinkTo @to="/bar" @historyPush={{@historyPush}}>
+    <LinkTo
+      @to="/bar"
+      @historyPush={{@historyPush}}
+    >
       bar
     </LinkTo>
-    <LinkTo @to="/baz" @historyPush={{@historyPush}}>
+    <LinkTo
+      @to="/baz"
+      @historyPush={{@historyPush}}
+    >
       baz
     </LinkTo>
   </nav>
 
-  <RouteSwitch @pathname={{@pathname}} as |switchAction|>
-    <Route @exact={{true}} @pathname={{@pathname}} @path="/foo" @switchIndex="1" @matchAction={{switchAction}}>
+  <RouteSwitch
+    @pathname={{@pathname}}
+    as |switchAction|
+  >
+    <Route
+      @exact={{true}}
+      @pathname={{@pathname}}
+      @path="/foo"
+      @switchIndex="1"
+      @matchAction={{switchAction}}
+    >
       <p>foo</p>
     </Route>
 
-    <Route @pathname={{@pathname}} @path="{{path}}/bar" @switchIndex="2" @matchAction={{switchAction}}>
+    <Route
+      @pathname={{@pathname}}
+      @path="{{path}}/bar"
+      @switchIndex="2"
+      @matchAction={{switchAction}}
+    >
       <p>bar</p>
     </Route>
 
-    <Route @pathname={{@pathname}} @path="{{path}}/:baz" @switchIndex="3" @matchAction={{switchAction}}>
+    <Route
+      @pathname={{@pathname}}
+      @path="{{path}}/:baz"
+      @switchIndex="3"
+      @matchAction={{switchAction}}
+    >
       <p>baz</p>
     </Route>
   </RouteSwitch>
@@ -73,49 +104,105 @@ i ended up with something messy, not sure i understand the architecture folder n
 you can render nested `RouteSwitch` in `RouteSwitch` or `Route`.
 
 ```html
-<RouterBrowser @store={{store}} as |pathname historyPush|>
+<RouterBrowser
+  @store={{store}}
+  as |pathname historyPush|
+>
   <nav>
-    <LinkTo @to="/foo" @historyPush={{@historyPush}}>
+    <LinkTo
+      @to="/foo"
+      @historyPush={{@historyPush}}
+    >
       foo
     </LinkTo>
-    <LinkTo @to="/foo/bar" @historyPush={{@historyPush}}>
+    <LinkTo
+      @to="/foo/bar"
+      @historyPush={{@historyPush}}
+    >
       foo
     </LinkTo>
-    <LinkTo @to="/foo/baz" @historyPush={{@historyPush}}>
+    <LinkTo
+      @to="/foo/baz"
+      @historyPush={{@historyPush}}
+    >
       foo
     </LinkTo>
-    <LinkTo @to="/bar" @historyPush={{@historyPush}}>
+    <LinkTo
+      @to="/bar"
+      @historyPush={{@historyPush}}
+    >
       bar
     </LinkTo>
-    <LinkTo @to="/baz" @historyPush={{@historyPush}}>
+    <LinkTo
+      @to="/baz"
+      @historyPush={{@historyPush}}
+    >
       baz
     </LinkTo>
   </nav>
 
-  <RouteSwitch @pathname={{@pathname}} as |switchAction|>
-    <Route @pathname={{@pathname}} @path="/foo" @switchIndex="1" @matchAction={{switchAction}} as |path|>
+  <RouteSwitch
+    @pathname={{@pathname}}
+    as |switchAction|
+  >
+    <Route
+      @pathname={{@pathname}}
+      @path="/foo"
+      @switchIndex="1"
+      @matchAction={{switchAction}}
+      as |path|
+    >
       <p>foo</p>
 
-      <RouteSwitch @pathname={{@pathname}} as |switchAction|>
-        <Route @exact={{true}} @pathname={{@pathname}} @path="{{path}}/" @switchIndex="1" @matchAction={{switchAction}}>
+      <RouteSwitch
+        @pathname={{@pathname}}
+        as |switchAction|
+      >
+        <Route
+          @exact={{true}}
+          @pathname={{@pathname}}
+          @path="{{path}}/"
+          @switchIndex="1"
+          @matchAction={{switchAction}}
+        >
           <p>foo</p>
         </Route>
 
-        <Route @pathname={{@pathname}} @path="{{path}}/bar" @switchIndex="2" @matchAction={{switchAction}}>
+        <Route
+          @pathname={{@pathname}}
+          @path="{{path}}/bar"
+          @switchIndex="2"
+          @matchAction={{switchAction}}
+        >
           <p>bar</p>
         </Route>
 
-        <Route @pathname={{@pathname}} @path="{{path}}/:baz" @switchIndex="3" @matchAction={{switchAction}}>
+        <Route
+          @pathname={{@pathname}}
+          @path="{{path}}/:baz"
+          @switchIndex="3"
+          @matchAction={{switchAction}}
+        >
           <p>baz</p>
         </Route>
       </RouteSwitch>
     </Route>
 
-    <Route @pathname={{@pathname}} @path="{{path}}/bar" @switchIndex="2" @matchAction={{switchAction}}>
+    <Route
+      @pathname={{@pathname}}
+      @path="{{path}}/bar"
+      @switchIndex="2"
+      @matchAction={{switchAction}}
+    >
       <p>bar</p>
     </Route>
 
-    <Route @pathname={{@pathname}} @path="{{path}}/:baz" @switchIndex="3" @matchAction={{switchAction}}>
+    <Route
+      @pathname={{@pathname}}
+      @path="{{path}}/:baz"
+      @switchIndex="3"
+      @matchAction={{switchAction}}
+    >
       <p>baz</p>
     </Route>
   </RouteSwitch>
@@ -125,4 +212,4 @@ you can render nested `RouteSwitch` in `RouteSwitch` or `Route`.
 
 ## live demo
 
-## nested RouteSwitch
+#### nested RouteSwitch

@@ -33,12 +33,11 @@ array of slide will be rendered by provided component.
   @slidesLength={{slides.length}}
   as |slideWidth slideHeight slide|
 >
-  <li
-    class="slider__slide"
-    style="width: {{slideWidth}}px; height: {{slideHeight}}px;"
-  >
+  <Slide
+    @slideWidth={{slideWidth}} 
+    @slideHeight={{slideHeight}}>
     <p>{{slide.name}}</p>
-  </li>
+  </Slide>
 </Slider>
 ```
 
@@ -48,7 +47,7 @@ array of slide will be rendered by provided component.
   @slidesLength={{slides.length}}
   as |slideWidth slideHeight slide|
 >
-  <my-custom-slide
+  <MyCustomSlide
     @slide={{slide}}
     @slideWidth={{slideWidth}}
     @slideHeight={{slideHeight}}
@@ -66,13 +65,15 @@ put your slides components where there belongs.
   @slidesLength={{2}}
   as |slideWidth slideHeight|
 >
-  <my-custom-slide
+  <MyCustomSlide
     @slideWidth={{slideWidth}}
     @slideHeight={{slideHeight}}
   />
-  <li style="width: {{slideWidth}}px; height: {{slideHeight}}px;">
+  <Slide
+    @slideWidth={{slideWidth}}
+    @slideHeight={{slideHeight}}>
     <p>custom slide</p>
-  </li>
+  </Slide>
 </Slider>
 ```
 
@@ -86,11 +87,16 @@ add a ratio argument to control the ratio.
   @slidesLength={{2}}
   @ratio={{1}}
  as |slideWidth slideHeight|
->
-  <my-custom-slide @slideWidth={{slideWidth}} />
-  <li style="width: {{slideWidth}};">
+>  
+  <MyCustomSlide
+    @slideWidth={{slideWidth}}
+    @slideHeight={{slideHeight}}
+  />
+  <Slide
+    @slideWidth={{slideWidth}}
+    @slideHeight={{slideHeight}}>
     <p>custom slide</p>
-  </li>
+  </Slide>
 </Slider>
 ```
 

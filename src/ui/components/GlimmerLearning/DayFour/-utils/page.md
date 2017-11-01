@@ -58,21 +58,36 @@ at this point i wasn't able to have a working switch, so was the end of the day 
 ### examples
 
 ```html
-<RouterBrowser as |pathname historyPush|>
+<RouterBrowser
+  as |pathname historyPush|
+>
   <nav>
-    <LinkTo @to="/" @historyPush={{@historyPush}}>
+    <LinkTo
+      @to="/"
+      @historyPush={{@historyPush}}
+    >
       homepage
     </LinkTo>
-    <LinkTo @to="/g-date-picker" @historyPush={{@historyPush}}>
-      g-date-picker
+    <LinkTo
+      @to="/date-picker"
+      @historyPush={{@historyPush}}
+    >
+      date-picker
     </LinkTo>
   </nav>
 
-  <Route @exact={{true}} @pathname={{pathname}} @path="/">
+  <Route
+    @exact={{true}}
+    @pathname={{pathname}}
+    @path="/"
+  >
     <h1>homepage</h1>
   </Route>
 
-  <Route @pathname={{pathname}} @path="/g-date-picker">
+  <Route
+    @pathname={{pathname}}
+    @path="/date-picker"
+  >
     <h1>date-picker</h1>
   </Route>
 </RouterBrowser>
@@ -81,12 +96,23 @@ at this point i wasn't able to have a working switch, so was the end of the day 
 you can render nested route as well.
 
 ```html
-<Route @exact={{true}} @pathname={{pathname}} @path="/foo" as |path|>
+<Route
+  @pathname={{pathname}}
+  @path="/foo"
+  as |path|
+>
   <h1>foo</h1>
-  <Route @exact={{true}} @pathname={{pathname}} @path="{{path}}/">
+  <Route
+    @exact={{true}}
+    @pathname={{pathname}}
+    @path="{{path}}/"
+  >
     <h2> index</h2>
   </Route>
-  <Route @pathname={{pathname}} @path="{{path}}/bar">
+  <Route
+    @pathname={{pathname}}
+    @path="{{path}}/bar"
+  >
     <h2> bar</h2>
   </Route>
 </Route>
